@@ -17,6 +17,9 @@ static uint8_t __input(void *cc) {
 
 static int __has_more_input(void *cc){
     struct str_input *inp = cc;
+
+    fprintf(stderr, "__hash_more_input\n");
+
     return (inp->p < inp->pe);
 }
 
@@ -26,7 +29,7 @@ static int __match( void *cc
                   , int consumed
                   , int exact ) {
 
-    fprintf(stderr, "__match\n");
+    fprintf(stderr, "__match %s\n", r->class_name);
 
     return 1;
 }
